@@ -8,15 +8,26 @@ source:
   url: https://github.com/WGLab/PennCNV/archive/v{{ version }}.tar.gz
   md5: 2bf859525a08b4db49fae316baa6ccc1
 
+build:
+  skip: True # [osx]
+  build_number: 0
+
 requirements:
   build:
     - perl
-    - gcc
+    - gcc_linux-64
 
   run:
     - perl
+    - libgcc
+test:
+  source_files:
+    - test-data.txt
+    - some/directory
+    - some/directory/pattern*.sh
 
 about:
   home: http://penncnv.openbioinformatics.org/
+  license: Unlicense
   license_file: UNLICENSE
   summary: Copy number vaiation detection from SNP arrays
