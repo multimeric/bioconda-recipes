@@ -1,0 +1,22 @@
+{% set version = "1.0.4" %}
+
+package:
+  name: penncnv
+  version: {{ version }}
+
+source:
+  url: https://github.com/WGLab/PennCNV/archive/v{{ version }}.tar.gz
+  md5: 2bf859525a08b4db49fae316baa6ccc1
+
+requirements:
+  build:
+    - perl
+    - gcc
+
+  run:
+    - perl
+
+about:
+  home: http://penncnv.openbioinformatics.org/
+  license_file: UNLICENSE
+  summary: Copy number vaiation detection from SNP arrays
