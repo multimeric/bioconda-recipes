@@ -20,19 +20,24 @@ requirements:
   build:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
-    - libtiff
-    - fftw
-    - openmpi
     - cmake
     - make
   host:
     - libtiff
     - fftw
     - openmpi
+    - xorg-libx11
+    - xorg-libxft
+    - xorg-libxrender
+    - fontconfig
   run: 
     - libtiff
     - fftw
     - openmpi
+    - xorg-libx11
+    - xorg-libxft
+    - xorg-libxrender
+    - fontconfig
     
 about:
   home: https://github.com/3dem/relion
