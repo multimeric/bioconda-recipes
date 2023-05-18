@@ -1,0 +1,28 @@
+{% set name = "weasis" %}
+{% set version = "4.0.3" %}
+
+package:
+  name: "{{ name }}"
+  version: "{{ version }}"
+
+source:
+  url: https://github.com/nroduit/Weasis/archive/refs/tags/v{{version}}.tar.gz
+  sha256: f58817f6b2692d14aeb5cf0a377f42590b295ec51f42daaea0d960362ddfe3ee
+
+build:
+  number: 1
+
+requirements:
+  build:
+    - maven
+  run:
+    - openjdk >=17
+
+test:
+  commands:
+     - 'abra2 2>&1 | grep "Abra version"'
+
+about:
+  home: https://github.com/mozack/abra2
+  license: MIT
+  summary: ABRA2 is an updated implementation of ABRA
