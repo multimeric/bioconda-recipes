@@ -1,0 +1,48 @@
+{% set name = "predict_solvent_content" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ccp4/{{ name }}/archive/main.tar.gz
+  sha256: ""  # TODO: Add SHA256 checksum
+
+build:
+  number: 0
+  noarch: python
+  script: |
+    mkdir -p $PREFIX/bin
+    cp *.py $PREFIX/bin/
+    chmod +x $PREFIX/bin/predict_solvent_content.py
+
+requirements:
+  host:
+    - python >=3.7
+  run:
+    - python >=3.7
+    - numpy
+    - onnxruntime
+    - gemmi
+    - ccp4-tools
+
+test:
+  commands:
+    - python $PREFIX/bin/predict_solvent_content.py --help || true
+
+about:
+  home: https://github.com/ccp4/predict_solvent_content
+  license: MIT
+  license_family: MIT
+  license_file: LICENSE
+  summary: 'Scripts for predicting protein crystal solvent content using ML models'
+  description: |
+    Scripts used to generate machine learning models for predicting protein 
+    crystal solvent content. Uses modified ViT-V-Net transformer and UNet3D 
+    models to predict solvent content from Patterson maps.
+  dev_url: https://github.com/ccp4/predict_solvent_content
+
+extra:
+  recipe-maintainers:
+    - your-github-username
