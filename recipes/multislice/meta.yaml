@@ -21,7 +21,6 @@ requirements:
   host:
     - eigen
   run:
-    - eigen
 
 test:
   commands:
@@ -39,4 +38,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-username
+    - multimeric
