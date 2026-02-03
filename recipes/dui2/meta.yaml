@@ -27,7 +27,6 @@ requirements:
     - pip
     - setuptools
   run:
-    - python >=3.7
     - requests >2
     - h5py >=3.7.0
     - pyside2 >5.15.1
@@ -53,4 +52,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-username
+    - multimeric
