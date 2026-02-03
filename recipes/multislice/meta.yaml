@@ -1,0 +1,42 @@
+{% set name = "multislice" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ccp4/{{ name }}/archive/main.tar.gz
+  sha256: 94e0e95dbbc84d49afe0e23d74158487eaf48c3c57eb8a9939ec9ada43a396e4
+
+build:
+  number: 0
+  skip: true  # [win]
+
+requirements:
+  build:
+    - {{ compiler('cxx') }}
+    - cmake
+    - make
+  host:
+    - eigen
+  run:
+    - eigen
+
+test:
+  commands:
+    - test -f $PREFIX/bin/multislice  # [unix]
+
+about:
+  home: https://github.com/ccp4/multislice
+  license: BSD-2-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'Multislice electron diffraction simulation code'
+  description: |
+    C++ implementation of multislice method for electron diffraction simulation.
+  dev_url: https://github.com/ccp4/multislice
+
+extra:
+  recipe-maintainers:
+    - your-github-username
