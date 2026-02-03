@@ -23,8 +23,6 @@ requirements:
     - setuptools
     - pyside2
   run:
-    - python >=3.7
-    - pyside2
     - dials
     - numpy
     - psutil
@@ -50,4 +48,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-username
+    - multimeric
