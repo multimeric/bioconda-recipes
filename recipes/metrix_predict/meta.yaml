@@ -1,0 +1,45 @@
+{% set name = "metrix_predict" %}
+{% set version = "0.1.0" %}
+
+package:
+  name: {{ name|lower }}
+  version: {{ version }}
+
+source:
+  url: https://github.com/ccp4/{{ name }}/archive/main.tar.gz
+  sha256: afea3d7e73182d6ebae83751c7c889521d3dd67459c06a5913a1317376303ebe
+
+build:
+  number: 0
+  noarch: python
+  script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
+
+requirements:
+  host:
+    - python >=3.6
+    - pip
+    - setuptools
+  run:
+    - python >=3.6
+    - numpy
+    - scikit-learn
+    - pandas
+
+test:
+  imports:
+    - metrix_predict
+
+about:
+  home: https://github.com/ccp4/metrix_predict
+  license: BSD-3-Clause
+  license_family: BSD
+  license_file: LICENSE
+  summary: 'Predictions based on metrix_ml training'
+  description: |
+    Metrix predict provides machine learning predictions for macromolecular
+    crystallography based on metrix_ml training.
+  dev_url: https://github.com/ccp4/metrix_predict
+
+extra:
+  recipe-maintainers:
+    - your-github-username
