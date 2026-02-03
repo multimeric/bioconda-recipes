@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ccp4/{{ name }}/archive/main.tar.gz
-  sha256: ""  # TODO: Add SHA256 checksum
+  sha256: 29b88f2ef498661ffb30c64f6701650b8af37b61e020b2b1c2a75442dd473e15
 
 build:
   number: 0
