@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ccp4/DUI2/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: ""  # TODO: Add SHA256 checksum
+  sha256: 17d5948724aa243257b86a4c1812c5c8a381ddeb67652d412d004cfae94a070f
 
 build:
   number: 0
