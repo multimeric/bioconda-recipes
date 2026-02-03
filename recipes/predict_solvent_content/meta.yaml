@@ -21,7 +21,6 @@ requirements:
   host:
     - python >=3.7
   run:
-    - python >=3.7
     - numpy
     - onnxruntime
     - gemmi
@@ -45,4 +44,4 @@ about:
 
 extra:
   recipe-maintainers:
-    - your-github-username
+    - multimeric
